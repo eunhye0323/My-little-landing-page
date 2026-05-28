@@ -1,7 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { locales, type Locale } from '~/i18n';
+import { t, locales, type Locale } from '~/i18n';
 import Hero from '~/components/widgets/Hero.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -13,66 +12,78 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const { lang } = Astro.params as { lang: Locale };
 
 const metadata = {
-  title: 'Features',
+  title: t(lang, 'features.heroTitle'),
 };
 ---
 
 <Layout metadata={metadata} lang={lang}>
   <Hero
-    tagline="Features"
-    title="Generation & Evaluation"
-    subtitle="실세계 시공간 데이터로부터 고품질 합성 데이터를 생성하고, 통계적·목적적으로 품질을 검증합니다."
+    tagline={t(lang, 'features.heroTagline')}
+    title={t(lang, 'features.heroTitle')}
+    subtitle={t(lang, 'features.heroSubtitle')}
   />
 
   <div id="generation" class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-2">
-    <p class="text-sm font-bold tracking-widest uppercase text-secondary dark:text-blue-200">01 — Generation</p>
-    <h2 class="text-3xl font-bold font-heading text-heading mt-1">생성</h2>
-    <p class="mt-2 text-muted text-lg">도메인 지식을 인지한 고품질 합성 시공간 데이터 생성</p>
+    <p class="text-sm font-bold tracking-widest uppercase text-secondary dark:text-blue-200">
+      {t(lang, 'features.generationLabel')}
+    </p>
+    <h2 class="text-3xl font-bold font-heading text-heading mt-1">
+      {t(lang, 'features.generationTitle')}
+    </h2>
+    <p class="mt-2 text-muted text-lg">{t(lang, 'features.generationSubtitle')}</p>
   </div>
 
   <Steps
     items={[
       {
-        title: 'Knowledge Encoding',
-        description: '시공간 데이터의 구조·역학 등 사전지식을 생성 모델에 명시적으로 인코딩합니다.',
+        title: t(lang, 'features.knowledgeEncodingTitle'),
+        description: t(lang, 'features.knowledgeEncodingDesc'),
         icon: 'tabler:brain',
       },
       {
-        title: 'Relation Modeling',
-        description: '다변량 시공간 데이터 간 상관관계·인과관계를 모델링해 데이터 추론을 가능하게 합니다.',
+        title: t(lang, 'features.relationModelingTitle'),
+        description: t(lang, 'features.relationModelingDesc'),
         icon: 'tabler:network',
       },
       {
-        title: 'Data Assimilation',
-        description: '데이터 섭동 기술로 생성 중 누적 오차를 수정해 합성 정확도를 향상합니다.',
+        title: t(lang, 'features.dataAssimilationTitle'),
+        description: t(lang, 'features.dataAssimilationDesc'),
         icon: 'tabler:adjustments',
       },
       {
-        title: 'Objective Reinforcement',
-        description: '도메인 요구사항에 맞는 보상함수를 적용해 목적 맞춤형 합성 데이터를 생성합니다.',
+        title: t(lang, 'features.objectiveReinforcementTitle'),
+        description: t(lang, 'features.objectiveReinforcementDesc'),
         icon: 'tabler:target-arrow',
       },
     ]}
   />
 
   <div id="evaluation" class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-2">
-    <p class="text-sm font-bold tracking-widest uppercase text-secondary dark:text-blue-200">02 — Evaluation</p>
-    <h2 class="text-3xl font-bold font-heading text-heading mt-1">평가</h2>
-    <p class="mt-2 text-muted text-lg">생성 데이터의 품질을 통계적·목적적으로 정량 검증</p>
+    <p class="text-sm font-bold tracking-widest uppercase text-secondary dark:text-blue-200">
+      {t(lang, 'features.evaluationLabel')}
+    </p>
+    <h2 class="text-3xl font-bold font-heading text-heading mt-1">
+      {t(lang, 'features.evaluationTitle')}
+    </h2>
+    <p class="mt-2 text-muted text-lg">{t(lang, 'features.evaluationSubtitle')}</p>
   </div>
 
   <Steps
     items={[
       {
-        title: 'Statistical Similarity',
-        description: '합성 데이터와 실제 데이터의 분포 유사성 및 변량 간 상관관계를 정량적으로 평가합니다.',
+        title: t(lang, 'features.statisticalSimilarityTitle'),
+        description: t(lang, 'features.statisticalSimilarityDesc'),
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Objective Relevance',
-        description: '목적 맞춤형 AI 모델 성능을 실데이터·합성데이터·혼합 구성별로 비교해 적합성을 평가합니다.',
+        title: t(lang, 'features.objectiveRelevanceTitle'),
+        description: t(lang, 'features.objectiveRelevanceDesc'),
         icon: 'tabler:check',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
 </Layout>

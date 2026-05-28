@@ -26,5 +26,28 @@
   "hero": {
     "title": "Synthetic Spatio-Temporal Data Vault",
     "subtitle": "<strong>SSTDV</strong> is a research project for generating and evaluation synthetic training data from the real-world spatiotemporal data."
+  },
+  "features": {
+    "heroTagline": "Features",
+    "heroTitle": "Generation & Evaluation",
+    "heroSubtitle": "Generate high-quality synthetic data from real-world spatio-temporal data, and verify quality through statistical and objective metrics.",
+    "generationLabel": "01 — Generation",
+    "generationTitle": "Generation",
+    "generationSubtitle": "Generate high-quality synthetic spatio-temporal data with domain knowledge encoding.",
+    "knowledgeEncodingTitle": "Knowledge Encoding",
+    "knowledgeEncodingDesc": "Explicitly encode domain prior knowledge — structure, dynamics, and constraints — into generative models for spatio-temporal data.",
+    "relationModelingTitle": "Relation Modeling",
+    "relationModelingDesc": "Model correlations, causality, and teleconnections among multivariate spatio-temporal data to enable data inference.",
+    "dataAssimilationTitle": "Data Assimilation",
+    "dataAssimilationDesc": "Correct accumulated errors and missing data during generation through data perturbation techniques to improve synthesis accuracy.",
+    "objectiveReinforcementTitle": "Objective Reinforcement",
+    "objectiveReinforcementDesc": "Learn spatio-temporal data generation models using reward functions aligned with domain data requirements and objectives.",
+    "evaluationLabel": "02 — Evaluation",
+    "evaluationTitle": "Evaluation",
+    "evaluationSubtitle": "Quantitatively verify the quality of generated synthetic data through statistical similarity and objective relevance.",
+    "statisticalSimilarityTitle": "Statistical Similarity",
+    "statisticalSimilarityDesc": "Quantitatively evaluate distributional similarity and inter-variable correlations between synthetic and real data.",
+    "objectiveRelevanceTitle": "Objective Relevance",
+    "objectiveRelevanceDesc": "Assess fitness-for-purpose by comparing AI model performance with real-only, synthetic-only, and mixed data configurations."
   }
 }
