@@ -21,31 +21,25 @@ const metadata = {
   <Hero
     tagline="Features"
     title="Evaluation"
-    subtitle="Assess synthetic data quality with statistical similarity, objective relevance, and Turing-test-based metrics."
+    subtitle="Assess synthetic data quality with statistical similarity and objective relevance metrics."
   />
 
   <Features2
     title="Evaluation Capabilities"
     subtitle="Rigorous methods to measure how faithfully synthetic data reflects the real world."
-    columns={3}
+    columns={2}
     items={[
       {
         title: 'Statistical Similarity',
-        description: 'Quantify how closely synthetic data reproduces the statistical properties of the original dataset.',
+        description: 'Quantify how closely synthetic data reproduces the statistical properties of the original dataset — including distributional similarity and inter-variable correlations.',
         icon: 'tabler:chart-bar',
         callToAction: { text: 'Learn more', href: getRelativeLocaleUrl(lang, '/features/evaluation/statistical-similarity/') },
       },
       {
         title: 'Objective Relevance',
-        description: 'Evaluate whether synthetic data preserves the utility needed for specific downstream tasks and analyses.',
+        description: 'Evaluate whether synthetic data preserves the utility needed for specific downstream tasks, using domain-specific performance metrics such as classification, detection, and prediction.',
         icon: 'tabler:target-arrow',
         callToAction: { text: 'Learn more', href: getRelativeLocaleUrl(lang, '/features/evaluation/objective-relevance/') },
-      },
-      {
-        title: 'Turing Test',
-        description: 'Apply human- and machine-based discrimination tests to determine if synthetic data is indistinguishable from real data.',
-        icon: 'tabler:robot',
-        callToAction: { text: 'Learn more', href: getRelativeLocaleUrl(lang, '/features/evaluation/turing-test/') },
       },
     ]}
   />

@@ -7,9 +7,10 @@
     "brainImaging": "Brain Imaging",
     "breastCancer": "Breast Cancer",
     "environment": "Environment",
-    "publications": "Publications",
+    "publications": "Publications & Patents",
     "docs": "Docs",
-    "download": "Download"
+    "download": "Download",
+    "researchTeam": "Research Team"
   },
   "footer": {
     "resources": "Resources",

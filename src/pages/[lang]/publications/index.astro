@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import { locales, type Locale } from '~/i18n';
 import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -12,57 +13,102 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const { lang } = Astro.params as { lang: Locale };
 
 const metadata = {
-  title: 'Publications',
+  title: 'Publications & Patents',
 };
 ---
 
 <Layout metadata={metadata} lang={lang}>
   <Hero
-    tagline="Publications"
-    title="Research & Patents"
-    subtitle="Explore our published papers and patents advancing the state of synthetic data generation and evaluation."
+    tagline="Publications & Patents"
+    title="Research Outcomes"
+    subtitle="Papers, patents, and software outcomes from the SSTDV project."
   />
 
   <Content
-    title="Selected Publications"
-    subtitle="Our peer-reviewed research contributions to synthetic spatio-temporal data generation and evaluation."
+    title="Publications"
+    subtitle="Peer-reviewed research contributions from the SSTDV project."
     columns={1}
     items={[
       {
-        title: 'Privacy-Preserving Synthetic Medical Imaging Data Generation using Diffeomorphic Flows',
-        description: '권도현, 이서연, 박지훈, 최영민 | Nature Machine Intelligence, 2025',
+        title: 'Generative AI in Breast Surgical Simulation',
+        description: 'Status: Targeted for Q3 2026 | Related Use Case: Breast Cancer Surgical Simulation',
       },
       {
-        title: 'Temporal Consistency in Synthetic Spatio-Temporal Data: A Benchmark Study',
-        description: '김태형, 정수민, 한동희 | ICML, 2025',
-      },
-      {
-        title: 'Cross-Domain Adaptation of Synthetic Data Generators for Environmental Monitoring',
-        description: '이준호, 최민지, 강성호 | AAAI, 2025',
-      },
-      {
-        title: 'Uncertainty Quantification in Synthetic Medical Time Series: A Bayesian Approach',
-        description: '박서린, 김동윤, 조민수 | ICLR, 2024',
-      },
-      {
-        title: 'Evaluation Metrics for Synthetic Spatio-Temporal Data: A Comprehensive Survey',
-        description: '정하은, 윤석호, 허성현 | TPAMI, 2024',
+        title: '2.5D Deep Learning Model for Efficient and Accurate Breast Tumor Segmentation from Breast MRI to Support Surgical Planning in Patients with Breast Cancer',
+        description: 'Status: Submitted | Related Use Case: Breast Cancer | Related Technology: Multi-Structure Segmentation',
       },
     ]}
   />
 
   <Content
-    title="Preprints & Technical Reports"
-    subtitle="Our ongoing research and technical contributions available as preprints."
+    title="Patents"
+    subtitle="Intellectual property protecting SSTDV project innovations."
     columns={1}
     items={[
       {
-        title: 'Synthetic Data Generation for Rare Disease Imaging: A Feasibility Study',
-        description: '최수진, 김현우, 박종석 | arXiv, 2026',
+        title: 'Proprietary Conditioning Mechanisms for High-Accuracy Surgical Outcome Synthesis',
+        description: 'Related Technology: Objective-Reinforced Generation, Surgical Plan Conditioning',
       },
       {
-        title: 'Federated Learning with Synthetic Data: Privacy and Utility Trade-offs',
-        description: '서예린, 이동훈, 김지수 | Technical Report, 2026',
+        title: 'Interactive Patient-Centric Anatomical Mapping for Informed Consent and Surgical Consultation',
+        description: 'Related Use Case: Breast Cancer Surgical Simulation | Related System: Patient-Centric Surgical Planning System',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Related Software"
+    subtitle="Open-source tools developed as part of the SSTDV project."
+    columns={3}
+    items={[
+      {
+        title: 'BrainShapeToolKit',
+        description: 'Brain MRI-based shape extraction and modeling.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'DiffAM',
+        description: 'Spine CT-based anatomical modeling.',
+        icon: 'tabler:scan',
+      },
+      {
+        title: 'VCM',
+        description: 'Conditional brain MRI image generation.',
+        icon: 'tabler:photo-scan',
+      },
+      {
+        title: 'BrainODE',
+        description: 'Longitudinal brain change modeling via neural ODEs.',
+        icon: 'tabler:timeline',
+      },
+      {
+        title: 'Evaluation Tools',
+        description: 'PSNR, SSIM, LPIPS, Dice Score and more for synthetic data evaluation.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <Content
+    title="Application Outcomes"
+    subtitle="Real-world impact of SSTDV research."
+    columns={1}
+    items={[
+      {
+        title: 'Supplementing scarce medical imaging data',
+        description: 'Addressing the shortage of training data in medical AI through high-quality synthetic image generation.',
+      },
+      {
+        title: 'Improved disease classification and prediction',
+        description: 'Enhancing performance of AI models for disease classification and prediction using synthetic data augmentation.',
+      },
+      {
+        title: 'Open datasets and software dissemination',
+        description: 'Sharing research-grade open data and software tools to accelerate the wider research community.',
+      },
+      {
+        title: 'Dissemination through patents, papers, and software',
+        description: 'Spreading technical outcomes via publications, patent filings, and open-source software releases.',
       },
     ]}
   />

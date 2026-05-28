@@ -32,10 +32,6 @@ export function getHeaderData(locale: Locale) {
             text: t(locale, 'nav.breastCancer'),
             href: getRelativeLocaleUrl(locale, '/use-cases/breast-cancer/'),
           },
-          {
-            text: t(locale, 'nav.environment'),
-            href: getRelativeLocaleUrl(locale, '/use-cases/environment/'),
-          },
         ],
       },
       {
@@ -45,6 +41,10 @@ export function getHeaderData(locale: Locale) {
       {
         text: t(locale, 'nav.docs'),
         href: externalLinks.docs,
+      },
+      {
+        text: t(locale, 'nav.researchTeam'),
+        href: getRelativeLocaleUrl(locale, '/about/'),
       },
     ],
     actions: [
@@ -72,7 +72,6 @@ export function getFooterData(locale: Locale) {
         links: [
           { text: t(locale, 'nav.brainImaging'), href: getRelativeLocaleUrl(locale, '/use-cases/brain-imaging/') },
           { text: t(locale, 'nav.breastCancer'), href: getRelativeLocaleUrl(locale, '/use-cases/breast-cancer/') },
-          { text: t(locale, 'nav.environment'), href: getRelativeLocaleUrl(locale, '/use-cases/environment/') },
         ],
       },
       {
