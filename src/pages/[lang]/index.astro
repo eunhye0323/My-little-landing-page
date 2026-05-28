@@ -45,9 +45,9 @@ const metadata = {
 
   <Features
     id="features"
-    tagline="Features"
-    title="What SSTDV provides"
-    subtitle="A comprehensive framework for generating and evaluating synthetic spatio-temporal data with domain knowledge encoding."
+    tagline="Generation"
+    title="생성"
+    subtitle="실세계 시공간 데이터로부터 도메인 지식을 인지한 고품질 합성 데이터를 생성합니다."
     items={[
       {
         title: 'Knowledge Encoding',
@@ -69,23 +69,38 @@ const metadata = {
         description: 'Learn spatio-temporal data generation models using reward functions aligned with domain data requirements and objectives.',
         icon: 'tabler:target-arrow',
       },
+    ]}
+  />
+
+  <Features2
+    tagline="Evaluation"
+    title="평가"
+    subtitle="생성된 합성 데이터의 품질을 통계적 유사성과 목적 적합성으로 정량 평가합니다."
+    columns={2}
+    items={[
       {
         title: 'Statistical Similarity',
         description: 'Quantitatively evaluate distributional similarity between synthetic and real data, including inter-variable correlations.',
         icon: 'tabler:chart-bar',
+        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/evaluation/statistical-similarity/') },
       },
       {
         title: 'Objective Relevance',
         description: 'Assess fitness-for-purpose by comparing AI model performance with real-only, synthetic-only, and mixed data configurations.',
         icon: 'tabler:check',
+        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/evaluation/objective-relevance/') },
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
 
   <Features2
     tagline="Use Cases"
-    title="Real-World Medical Imaging Applications"
-    subtitle="Validated in two medical imaging domains, demonstrating the effectiveness of objective-reinforced synthetic data."
+    title="실증"
+    subtitle="의료영상 두 분야에서 목적 강화 합성 데이터의 유효성을 검증합니다."
     columns={2}
     items={[
       {
