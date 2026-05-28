@@ -12,11 +12,11 @@ export function getHeaderData(locale: Locale) {
         links: [
           {
             text: t(locale, 'nav.generation'),
-            href: getRelativeLocaleUrl(locale, '/features/generation/'),
+            href: getRelativeLocaleUrl(locale, '/features/') + '#generation',
           },
           {
             text: t(locale, 'nav.evaluation'),
-            href: getRelativeLocaleUrl(locale, '/features/evaluation/'),
+            href: getRelativeLocaleUrl(locale, '/features/') + '#evaluation',
           },
         ],
       },
@@ -63,8 +63,8 @@ export function getFooterData(locale: Locale) {
       {
         title: t(locale, 'nav.features'),
         links: [
-          { text: t(locale, 'nav.generation'), href: getRelativeLocaleUrl(locale, '/features/generation/') },
-          { text: t(locale, 'nav.evaluation'), href: getRelativeLocaleUrl(locale, '/features/evaluation/') },
+          { text: t(locale, 'nav.generation'), href: getRelativeLocaleUrl(locale, '/features/') + '#generation' },
+          { text: t(locale, 'nav.evaluation'), href: getRelativeLocaleUrl(locale, '/features/') + '#evaluation' },
         ],
       },
       {
