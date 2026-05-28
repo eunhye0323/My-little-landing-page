@@ -23,16 +23,6 @@ export function getHeaderData(locale: Locale) {
       {
         text: t(locale, 'nav.useCases'),
         href: getRelativeLocaleUrl(locale, '/use-cases/'),
-        links: [
-          {
-            text: t(locale, 'nav.brainImaging'),
-            href: getRelativeLocaleUrl(locale, '/use-cases/brain-imaging/'),
-          },
-          {
-            text: t(locale, 'nav.breastCancer'),
-            href: getRelativeLocaleUrl(locale, '/use-cases/breast-cancer/'),
-          },
-        ],
       },
       {
         text: t(locale, 'nav.publications'),
