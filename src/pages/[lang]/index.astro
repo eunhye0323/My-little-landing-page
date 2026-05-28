@@ -8,6 +8,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -43,50 +45,51 @@ const metadata = {
     </Fragment>
   </Hero>
 
+  <!-- 01. 생성 -->
+  <Note title="01 — Generation (생성)" description="도메인 지식을 인지한 고품질 합성 시공간 데이터 생성" />
+
   <Features
     id="features"
-    tagline="Generation"
-    title="생성"
-    subtitle="실세계 시공간 데이터로부터 도메인 지식을 인지한 고품질 합성 데이터를 생성합니다."
+    columns={2}
     items={[
       {
         title: 'Knowledge Encoding',
-        description: 'Explicitly encode prior knowledge — structure, dynamics, and domain constraints — into generative models for spatio-temporal data.',
+        description: '시공간 데이터의 구조·역학 등 사전지식을 생성 모델에 명시적으로 인코딩합니다.',
         icon: 'tabler:brain',
       },
       {
         title: 'Relation Modeling',
-        description: 'Model correlations, causality, and teleconnections among multivariate spatio-temporal data to enable data inference.',
+        description: '다변량 시공간 데이터 간 상관관계·인과관계를 모델링해 데이터 추론을 가능하게 합니다.',
         icon: 'tabler:network',
       },
       {
         title: 'Data Assimilation',
-        description: 'Correct accumulated errors and missing data during generation through data perturbation techniques to improve synthesis accuracy.',
+        description: '데이터 섭동 기술로 생성 중 누적 오차를 수정해 합성 정확도를 향상합니다.',
         icon: 'tabler:adjustments',
       },
       {
         title: 'Objective Reinforcement',
-        description: 'Learn spatio-temporal data generation models using reward functions aligned with domain data requirements and objectives.',
+        description: '도메인 요구사항에 맞는 보상함수를 적용해 목적 맞춤형 합성 데이터를 생성합니다.',
         icon: 'tabler:target-arrow',
       },
     ]}
   />
 
+  <!-- 02. 평가 -->
+  <Note title="02 — Evaluation (평가)" description="생성 데이터의 품질을 통계적·목적적으로 정량 검증" />
+
   <Features2
-    tagline="Evaluation"
-    title="평가"
-    subtitle="생성된 합성 데이터의 품질을 통계적 유사성과 목적 적합성으로 정량 평가합니다."
     columns={2}
     items={[
       {
         title: 'Statistical Similarity',
-        description: 'Quantitatively evaluate distributional similarity between synthetic and real data, including inter-variable correlations.',
+        description: '합성 데이터와 실제 데이터의 분포 유사성 및 변량 간 상관관계를 정량적으로 평가합니다.',
         icon: 'tabler:chart-bar',
         callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/evaluation/statistical-similarity/') },
       },
       {
         title: 'Objective Relevance',
-        description: 'Assess fitness-for-purpose by comparing AI model performance with real-only, synthetic-only, and mixed data configurations.',
+        description: '목적 맞춤형 AI 모델 성능을 실데이터·합성데이터·혼합 구성별로 비교해 적합성을 평가합니다.',
         icon: 'tabler:check',
         callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/evaluation/objective-relevance/') },
       },
@@ -97,48 +100,59 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <Features2
-    tagline="Use Cases"
-    title="실증"
-    subtitle="의료영상 두 분야에서 목적 강화 합성 데이터의 유효성을 검증합니다."
-    columns={2}
+  <!-- 03. 실증 -->
+  <Note title="03 — Use Cases (실증)" description="의료영상 두 분야에서 목적 강화 합성 데이터의 유효성 검증" />
+
+  <Content
+    isReversed
+    title="Brain Imaging — Virtual Brain"
+    subtitle="동국대학교 · ADNI"
+    callToAction={{ text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/use-cases/brain-imaging/') }}
     items={[
-      {
-        title: 'Brain Imaging — Virtual Brain',
-        description: 'Simulate longitudinal brain imaging changes associated with neurodegenerative diseases. Generate synthetic brain MRI data for disease classification and prediction model development using data from Dongguk University and ADNI.',
-        icon: 'tabler:brain',
-        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/use-cases/brain-imaging/') },
-      },
-      {
-        title: 'Breast Cancer Surgical Simulation',
-        description: 'Generate objective-reinforced synthetic breast MRI for surgical planning and patient-doctor shared decision-making. Trained on 1,483 pre/post-operative cases, conditioning on tumor location, resection region, and implant information.',
-        icon: 'tabler:stethoscope',
-        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/use-cases/breast-cancer/') },
-      },
+      { title: '종단 뇌영상 변화 시뮬레이션', description: '신경 퇴행성 질환과 관련된 만성·종단 뇌영상 변화를 생성합니다.' },
+      { title: '질병 분류·예측 모델 지원', description: '합성 뇌 MRI 데이터로 분류 및 예측 모델 학습을 가속합니다.' },
     ]}
+    image={{ src: '~/assets/images/default.png', alt: 'Brain Imaging' }}
   />
 
+  <Content
+    isAfterContent
+    title="Breast Cancer Surgical Simulation"
+    subtitle="Beamworks · 수술 전/후 MR 1,483 케이스"
+    callToAction={{ text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/use-cases/breast-cancer/') }}
+    items={[
+      { title: '수술 후 유방 MRI 예측', description: '종양 위치·절제 영역·임플란트 정보를 조건으로 수술 후 영상을 생성합니다.' },
+      { title: '의사-환자 공동 의사결정 지원', description: '메디컬 트윈 기반 수술 계획 시스템에 통합 가능한 생성 결과를 제공합니다.' },
+    ]}
+    image={{ src: '~/assets/images/default.png', alt: 'Breast Cancer' }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Resources -->
   <Features2
     tagline="Resources"
     title="Documentation & Outcomes"
-    subtitle="Access project documentation, tutorials, software tools, and research outcomes."
+    subtitle="프로젝트 문서, 튜토리얼, 소프트웨어 툴, 연구 성과를 확인하세요."
     columns={3}
     items={[
       {
         title: 'Docs',
-        description: 'Project overview, tutorials for Virtual Brain and Breast Cancer pipelines, and software references for BrainShapeToolKit, DiffAM, and VCM.',
+        description: 'Virtual Brain·Breast Cancer 튜토리얼 및 BrainShapeToolKit, DiffAM, VCM 레퍼런스.',
         icon: 'tabler:book',
         callToAction: { text: 'Go to Docs', href: externalLinks.docs, target: '_blank' },
       },
       {
         title: 'Publications & Patents',
-        description: 'Peer-reviewed papers, patent filings, open datasets, and application outcomes from the SSTDV project.',
+        description: '논문·특허·오픈 데이터셋 및 활용 성과.',
         icon: 'tabler:file-text',
         callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/publications/') },
       },
       {
         title: 'Research Team',
-        description: 'Meet the participating institutions — KAIST CGV, KIOST, Dongguk University, KAIST CNI, and Beamworks — and their respective research roles.',
+        description: 'KAIST CGV, KIOST, 동국대, KAIST CNI, Beamworks 소개.',
         icon: 'tabler:users',
         callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/about/') },
       },
