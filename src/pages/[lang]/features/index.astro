@@ -3,7 +3,6 @@ import type { GetStaticPaths } from 'astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { locales, type Locale } from '~/i18n';
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -25,7 +24,11 @@ const metadata = {
     subtitle="실세계 시공간 데이터로부터 고품질 합성 데이터를 생성하고, 통계적·목적적으로 품질을 검증합니다."
   />
 
-  <Note id="generation" title="01 — Generation (생성)" description="도메인 지식을 인지한 고품질 합성 시공간 데이터 생성" />
+  <div id="generation" class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-2">
+    <p class="text-sm font-bold tracking-widest uppercase text-secondary dark:text-blue-200">01 — Generation</p>
+    <h2 class="text-3xl font-bold font-heading text-heading mt-1">생성</h2>
+    <p class="mt-2 text-muted text-lg">도메인 지식을 인지한 고품질 합성 시공간 데이터 생성</p>
+  </div>
 
   <Steps
     items={[
@@ -52,7 +55,11 @@ const metadata = {
     ]}
   />
 
-  <Note id="evaluation" title="02 — Evaluation (평가)" description="생성 데이터의 품질을 통계적·목적적으로 정량 검증" />
+  <div id="evaluation" class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-2">
+    <p class="text-sm font-bold tracking-widest uppercase text-secondary dark:text-blue-200">02 — Evaluation</p>
+    <h2 class="text-3xl font-bold font-heading text-heading mt-1">평가</h2>
+    <p class="mt-2 text-muted text-lg">생성 데이터의 품질을 통계적·목적적으로 정량 검증</p>
+  </div>
 
   <Steps
     items={[
@@ -67,9 +74,5 @@ const metadata = {
         icon: 'tabler:check',
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Steps>
+  />
 </Layout>
