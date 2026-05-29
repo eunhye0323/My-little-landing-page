@@ -7,6 +7,10 @@ export function getHeaderData(locale: Locale) {
   return {
     links: [
       {
+        text: t(locale, 'nav.about'),
+        href: getRelativeLocaleUrl(locale, '/about/'),
+      },
+      {
         text: t(locale, 'nav.features'),
         href: getRelativeLocaleUrl(locale, '/features/'),
         links: [
@@ -31,10 +35,6 @@ export function getHeaderData(locale: Locale) {
       {
         text: t(locale, 'nav.docs'),
         href: externalLinks.docs,
-      },
-      {
-        text: t(locale, 'nav.researchTeam'),
-        href: getRelativeLocaleUrl(locale, '/about/'),
       },
     ],
     actions: [
