@@ -1,6 +1,6 @@
 {
   "nav": {
-    "features": "Features",
+    "features": "Research",
     "generation": "Generation",
     "evaluation": "Evaluation",
     "useCases": "Use Cases",
@@ -28,7 +28,7 @@
     "subtitle": "<strong>SSTDV</strong> is a research project for generating and evaluation synthetic training data from the real-world spatiotemporal data."
   },
   "features": {
-    "heroTagline": "Features",
+    "heroTagline": "Research",
     "heroTitle": "Generation & Evaluation",
     "heroSubtitle": "Generate high-quality synthetic data from real-world spatio-temporal data, and verify quality through statistical and objective metrics.",
     "generationLabel": "01 — Generation",

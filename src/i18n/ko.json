@@ -1,6 +1,6 @@
 {
   "nav": {
-    "features": "기능",
+    "features": "Research",
     "generation": "생성",
     "evaluation": "평가",
     "useCases": "실증사례",
@@ -28,7 +28,7 @@
     "subtitle": "<strong>SSTDV</strong>는 실제 세계 시공간 데이터로부터 합성 훈련 데이터를 생성하고 평가하기 위한 연구 프로젝트입니다."
   },
   "features": {
-    "heroTagline": "기능",
+    "heroTagline": "Research",
     "heroTitle": "생성 & 평가",
     "heroSubtitle": "실세계 시공간 데이터로부터 고품질 합성 데이터를 생성하고, 통계적·목적적으로 품질을 검증합니다.",
     "generationLabel": "01 — 생성",
