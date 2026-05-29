@@ -1,6 +1,9 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { locales, type Locale } from '~/i18n';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { t, locales, type Locale } from '~/i18n';
+import { externalLinks } from '~/config/externalLinks';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -202,4 +205,50 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- Resources -->
+  <Features2
+    tagline="Resources"
+    title="Documentation & Outcomes"
+    subtitle="프로젝트 문서, 튜토리얼, 소프트웨어 툴, 연구 성과를 확인하세요."
+    columns={3}
+    items={[
+      {
+        title: 'Docs',
+        description: 'Virtual Brain·Breast Cancer 튜토리얼 및 BrainShapeToolKit, DiffAM, VCM 레퍼런스.',
+        icon: 'tabler:book',
+        callToAction: { text: 'Go to Docs', href: externalLinks.docs, target: '_blank' },
+      },
+      {
+        title: 'Publications & Patents',
+        description: '논문·특허·오픈 데이터셋 및 활용 성과.',
+        icon: 'tabler:file-text',
+        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/publications/') },
+      },
+      {
+        title: 'Research Team',
+        description: 'KAIST CGV, KIOST, 동국대, KAIST CNI, Beamworks 소개.',
+        icon: 'tabler:users',
+        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/about/') },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: t(lang, 'nav.docs'),
+        href: externalLinks.docs,
+        target: '_blank',
+        icon: 'tabler:book',
+      },
+    ]}
+  >
+    <Fragment slot="title">SSTDV Project</Fragment>
+    <Fragment slot="subtitle">
+      Supported by IITP grant funded by the Korea government (MSIT)<br />
+      No.00223446 — Development of object-oriented synthetic data generation and evaluation methods
+    </Fragment>
+  </CallToAction>
 </Layout>
