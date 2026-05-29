@@ -31,147 +31,136 @@ const metadata = {
       alt: 'SSTDV Research Team',
     }}
   >
-    <Fragment slot="title">
-      SSTDV
-    </Fragment>
+    <Fragment slot="title">SSTDV</Fragment>
     <Fragment slot="subtitle">
-      We develop state-of-the-art methods for generating and evaluating synthetic spatio-temporal data to advance machine learning in healthcare, environmental science, and beyond.
+      SSTDV is a research project for generating and evaluating synthetic training data from real-world spatiotemporal data, supported by IITP grant funded by the Korea government (MSIT).
     </Fragment>
   </Hero>
 
   <Stats
     title="Project Overview"
     stats={[
-      { title: 'Publications', amount: '12' },
-      { title: 'Datasets Generated', amount: '48' },
-      { title: 'Research Institutions', amount: '6' },
-      { title: 'Years Active', amount: '3' },
+      { title: 'Research Institutions', amount: '5' },
+      { title: 'Use Cases', amount: '2' },
+      { title: 'Software Tools', amount: '5' },
+      { title: 'Research Areas', amount: '7' },
     ]}
   />
 
   <Features3
     title="Research Areas"
-    subtitle="Our team focuses on advancing the state of synthetic spatio-temporal data generation and evaluation."
+    subtitle="Core technical research areas spanning synthetic data generation, evaluation, and medical imaging applications."
     columns={3}
     isBeforeContent={true}
     items={[
       {
         title: 'Synthetic Data Generation',
-        description: 'Developing methods to generate synthetic spatio-temporal data that preserves statistical properties of real-world data.',
-        icon: 'tabler:template',
+        description: 'Developing methods to generate high-quality synthetic spatio-temporal data that preserves statistical properties of real-world data.',
+        icon: 'tabler:database',
       },
       {
-        title: 'Evaluation Metrics',
-        description: 'Researching quantitative metrics to assess the quality and utility of synthetic data for various downstream tasks.',
+        title: 'Knowledge Encoding',
+        description: 'Explicitly encoding domain prior knowledge — structure, dynamics, and constraints — into generative models.',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Relation Modeling',
+        description: 'Modeling correlations, causality, and teleconnections among multivariate spatio-temporal data.',
+        icon: 'tabler:network',
+      },
+      {
+        title: 'Data Assimilation',
+        description: 'Correcting accumulated errors and missing data during generation through data perturbation techniques.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'Objective-Reinforced Generation',
+        description: 'Learning generation models using reward functions aligned with domain data requirements and objectives.',
+        icon: 'tabler:target-arrow',
+      },
+      {
+        title: 'Evaluation of Synthetic Data',
+        description: 'Quantitatively verifying synthetic data quality through statistical similarity and objective relevance metrics.',
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Privacy Preservation',
-        description: 'Applying differential privacy and federated learning techniques to ensure privacy-preserving synthetic data generation.',
-        icon: 'tabler:lock',
-      },
-      {
-        title: 'Cross-Domain Adaptation',
-        description: 'Studying methods to transfer models trained on synthetic data to real-world domains effectively.',
-        icon: 'tabler:arrows-exchange',
-      },
-      {
-        title: 'Temporal Modeling',
-        description: 'Developing models that capture temporal dependencies and dynamics in spatio-temporal sequences.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Uncertainty Quantification',
-        description: 'Providing reliable uncertainty estimates for synthetic data to support decision-making in critical applications.',
-        icon: 'tabler:question-mark',
+        title: 'Medical Imaging Applications',
+        description: 'Validating synthetic data effectiveness in brain imaging and breast cancer surgical simulation domains.',
+        icon: 'tabler:stethoscope',
       },
     ]}
   />
 
   <Features3
-    title="Collaborators"
-    subtitle="We work with leading institutions to advance synthetic data research."
-    columns={4}
+    title="Participating Institutions"
+    subtitle="Five research institutions collaborating across generation, evaluation, and use case domains."
+    columns={3}
     isAfterContent={true}
     items={[
       {
-        title: 'Medical Imaging Partners',
-        description: 'Collaborating on synthetic medical imaging data for improved diagnostic AI.',
-        icon: 'tabler:heartbeat',
-      },
-      {
-        title: 'Environmental Agencies',
-        description: 'Working with agencies to generate synthetic environmental monitoring data.',
-        icon: 'tabler:leaf',
-      },
-      {
-        title: 'Academic Institutions',
-        description: 'Partnering with universities for foundational research in synthetic data.',
+        title: 'KAIST CGV',
+        description: 'Knowledge Encoding — brain MRI-based shape extraction and conditional image generation.',
         icon: 'tabler:school',
       },
       {
-        title: 'Industry Partners',
-        description: 'Applying synthetic data solutions to real-world industry challenges.',
+        title: 'KIOST',
+        description: 'Relation Modeling & Data Assimilation — spatiotemporal dependency learning and sea surface temperature forecasting.',
+        icon: 'tabler:wave-sine',
+      },
+      {
+        title: 'Dongguk University',
+        description: 'Statistical Similarity & Brain Imaging — evaluation of multivariate distribution similarity and longitudinal brain MRI synthesis.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'KAIST CNI',
+        description: 'Objective Relevance — evaluating fitness-for-purpose using classification, detection, and prediction performance metrics.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Beamworks',
+        description: 'Objective Reinforcement & Breast Cancer — post-surgical breast MRI generation for medical twin-based surgical planning.',
         icon: 'tabler:building',
       },
     ]}
   />
 
   <Steps2
-    title="Our Mission"
-    subtitle="We are committed to advancing AI capabilities through high-quality synthetic data while ensuring privacy and ethical practices."
+    title="Core Goals"
+    subtitle="The SSTDV project pursues four core research objectives to advance synthetic spatio-temporal data technology."
     items={[
       {
-        title: 'Advance AI through quality synthetic data',
-        description: 'Developing state-of-the-art methods to generate synthetic data that improves machine learning model performance and efficiency.',
+        title: 'High-quality synthetic data generation',
+        description: 'Developing technology to generate high-quality synthetic data that reflects real-world spatio-temporal characteristics.',
       },
       {
-        title: 'Ensure privacy and ethical practices',
-        description: 'Conducting research with rigorous privacy protections and ethical guidelines for synthetic data usage.',
+        title: 'Domain knowledge-based generative models',
+        description: 'Building generative models that explicitly encode domain knowledge including structure, dynamics, and physical constraints.',
       },
       {
-        title: 'Accelerate scientific discovery',
-        description: 'Providing synthetic data solutions that accelerate research in healthcare, environmental science, and beyond.',
-      },
-    ]}
-  />
-
-  <Steps2
-    title="Key Milestones"
-    subtitle="Our research has produced significant contributions to the field of synthetic spatio-temporal data."
-    isReversed={true}
-    items={[
-      {
-        title: 'Published 12 peer-reviewed papers',
-        description: 'Produced influential research published in top-tier venues including Nature MI, ICML, AAAI, and ICLR.',
-        icon: 'tabler:file-text',
+        title: 'Purpose-oriented evaluation technology',
+        description: 'Developing evaluation methods that verify synthetic data quality in terms of both statistical fidelity and task-specific utility.',
       },
       {
-        title: 'Generated 48 benchmark datasets',
-        description: 'Created comprehensive benchmark datasets for evaluating synthetic data generation and evaluation methods.',
-        icon: 'tabler:database',
-      },
-      {
-        title: 'Presented at major conferences',
-        description: 'Shared our findings at leading international conferences, advancing the state of the art in the field.',
-        icon: 'tabler:presentation',
+        title: 'Medical imaging validation',
+        description: 'Validating the effectiveness of synthetic data in real-world medical imaging use cases: brain imaging and breast cancer surgical simulation.',
       },
     ]}
   />
 
   <Features2
     title="Get In Touch"
-    tagline="Contact us"
+    tagline="Contact"
     columns={2}
     items={[
       {
-        title: 'Email contact',
+        title: 'Email',
         description: 'For research inquiries and collaboration opportunities.',
         icon: 'tabler:mail',
       },
       {
-        title: 'GitHub Issues',
-        description: 'For project-related bug reports and feature requests.',
+        title: 'GitHub',
+        description: 'For project-related bug reports, feature requests, and open-source contributions.',
         icon: 'tabler:brand-github',
       },
     ]}
