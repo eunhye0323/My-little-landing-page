@@ -13,16 +13,6 @@ export function getHeaderData(locale: Locale) {
       {
         text: t(locale, 'nav.features'),
         href: getRelativeLocaleUrl(locale, '/features/'),
-        links: [
-          {
-            text: t(locale, 'nav.generation'),
-            href: getRelativeLocaleUrl(locale, '/features/') + '#generation',
-          },
-          {
-            text: t(locale, 'nav.evaluation'),
-            href: getRelativeLocaleUrl(locale, '/features/') + '#evaluation',
-          },
-        ],
       },
       {
         text: t(locale, 'nav.useCases'),
