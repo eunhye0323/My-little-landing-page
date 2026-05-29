@@ -51,6 +51,12 @@
     "objectiveRelevanceTitle": "Objective Relevance",
     "objectiveRelevanceDesc": "Assess fitness-for-purpose by comparing AI model performance with real-only, synthetic-only, and mixed data configurations."
   },
+  "resources": {
+    "subtitle": "Access project documentation, tutorials, software tools, and research outcomes.",
+    "docsDesc": "Tutorials for Virtual Brain & Breast Cancer pipelines, and software references for BrainShapeToolKit, DiffAM, and VCM.",
+    "publicationsDesc": "Papers, patents, open datasets, and application outcomes.",
+    "researchDesc": "SSTDV's synthetic data generation and evaluation methodology."
+  },
   "useCases": {
     "heroTagline": "Use Cases",
     "heroTitle": "Applications",

@@ -180,24 +180,24 @@ const metadata = {
   <Features2
     tagline="Resources"
     title="Documentation & Outcomes"
-    subtitle="프로젝트 문서, 튜토리얼, 소프트웨어 툴, 연구 성과를 확인하세요."
+    subtitle={t(lang, 'resources.subtitle')}
     columns={3}
     items={[
       {
         title: 'Docs',
-        description: 'Virtual Brain·Breast Cancer 튜토리얼 및 BrainShapeToolKit, DiffAM, VCM 레퍼런스.',
+        description: t(lang, 'resources.docsDesc'),
         icon: 'tabler:book',
         callToAction: { text: 'Go to Docs', href: externalLinks.docs, target: '_blank' },
       },
       {
         title: 'Publications & Patents',
-        description: '논문·특허·오픈 데이터셋 및 활용 성과.',
+        description: t(lang, 'resources.publicationsDesc'),
         icon: 'tabler:file-text',
         callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/publications/') },
       },
       {
         title: 'Research',
-        description: 'SSTDV의 합성 데이터 생성 및 평가 방법론 소개.',
+        description: t(lang, 'resources.researchDesc'),
         icon: 'tabler:flask',
         callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/') },
       },

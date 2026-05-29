@@ -51,6 +51,12 @@
     "objectiveRelevanceTitle": "목적 적합성",
     "objectiveRelevanceDesc": "목적 맞춤형 AI 모델 성능을 실데이터·합성데이터·혼합 구성별로 비교해 적합성을 평가합니다."
   },
+  "resources": {
+    "subtitle": "프로젝트 문서, 튜토리얼, 소프트웨어 툴, 연구 성과를 확인하세요.",
+    "docsDesc": "Virtual Brain·Breast Cancer 튜토리얼 및 BrainShapeToolKit, DiffAM, VCM 레퍼런스.",
+    "publicationsDesc": "논문·특허·오픈 데이터셋 및 활용 성과.",
+    "researchDesc": "SSTDV의 합성 데이터 생성 및 평가 방법론 소개."
+  },
   "useCases": {
     "heroTagline": "실증사례",
     "heroTitle": "실증사례",
