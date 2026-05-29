@@ -52,7 +52,7 @@
   },
   "useCases": {
     "heroTagline": "Use Cases",
-    "heroTitle": "Real-World Applications",
+    "heroTitle": "Applications",
     "heroSubtitle": "Validated in two medical imaging domains, demonstrating the effectiveness of objective-reinforced synthetic data.",
     "brainLabel": "01 — Brain Imaging",
     "brainTitle": "Virtual Brain",
