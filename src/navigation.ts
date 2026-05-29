@@ -7,10 +7,6 @@ export function getHeaderData(locale: Locale) {
   return {
     links: [
       {
-        text: t(locale, 'nav.about'),
-        href: getRelativeLocaleUrl(locale, '/about/'),
-      },
-      {
         text: t(locale, 'nav.features'),
         href: getRelativeLocaleUrl(locale, '/features/'),
       },
@@ -59,10 +55,6 @@ export function getFooterData(locale: Locale) {
           { text: t(locale, 'nav.publications'), href: getRelativeLocaleUrl(locale, '/publications/') },
           { text: t(locale, 'nav.docs'), href: externalLinks.docs },
         ],
-      },
-      {
-        title: t(locale, 'footer.company'),
-        links: [{ text: t(locale, 'footer.about'), href: getRelativeLocaleUrl(locale, '/about/') }],
       },
     ],
     secondaryLinks: [],

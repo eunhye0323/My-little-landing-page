@@ -3,14 +3,13 @@ import type { GetStaticPaths } from 'astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { t, locales, type Locale } from '~/i18n';
 import { externalLinks } from '~/config/externalLinks';
-import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Content from '~/components/widgets/Content.astro';
-import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return locales.map((locale) => ({ params: { lang: locale } }));
@@ -26,6 +25,186 @@ const metadata = {
 
 <Layout metadata={metadata} lang={lang}>
   <Hero
+    tagline="About"
+    image={{
+      src: '~/assets/images/Rep.png',
+      alt: 'SSTDV Research Team',
+    }}
+  >
+    <Fragment slot="title">
+      SSTDV
+    </Fragment>
+    <Fragment slot="subtitle">
+      We develop state-of-the-art methods for generating and evaluating synthetic spatio-temporal data to advance machine learning in healthcare, environmental science, and beyond.
+    </Fragment>
+  </Hero>
+
+  <Stats
+    title="Project Overview"
+    stats={[
+      { title: 'Publications', amount: '12' },
+      { title: 'Datasets Generated', amount: '48' },
+      { title: 'Research Institutions', amount: '6' },
+      { title: 'Years Active', amount: '3' },
+    ]}
+  />
+
+  <Features3
+    title="Research Areas"
+    subtitle="Our team focuses on advancing the state of synthetic spatio-temporal data generation and evaluation."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Synthetic Data Generation',
+        description: 'Developing methods to generate synthetic spatio-temporal data that preserves statistical properties of real-world data.',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Evaluation Metrics',
+        description: 'Researching quantitative metrics to assess the quality and utility of synthetic data for various downstream tasks.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Privacy Preservation',
+        description: 'Applying differential privacy and federated learning techniques to ensure privacy-preserving synthetic data generation.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Cross-Domain Adaptation',
+        description: 'Studying methods to transfer models trained on synthetic data to real-world domains effectively.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'Temporal Modeling',
+        description: 'Developing models that capture temporal dependencies and dynamics in spatio-temporal sequences.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Uncertainty Quantification',
+        description: 'Providing reliable uncertainty estimates for synthetic data to support decision-making in critical applications.',
+        icon: 'tabler:question-mark',
+      },
+    ]}
+  />
+
+  <Features3
+    title="Collaborators"
+    subtitle="We work with leading institutions to advance synthetic data research."
+    columns={4}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Medical Imaging Partners',
+        description: 'Collaborating on synthetic medical imaging data for improved diagnostic AI.',
+        icon: 'tabler:heartbeat',
+      },
+      {
+        title: 'Environmental Agencies',
+        description: 'Working with agencies to generate synthetic environmental monitoring data.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Academic Institutions',
+        description: 'Partnering with universities for foundational research in synthetic data.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Industry Partners',
+        description: 'Applying synthetic data solutions to real-world industry challenges.',
+        icon: 'tabler:building',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Our Mission"
+    subtitle="We are committed to advancing AI capabilities through high-quality synthetic data while ensuring privacy and ethical practices."
+    items={[
+      {
+        title: 'Advance AI through quality synthetic data',
+        description: 'Developing state-of-the-art methods to generate synthetic data that improves machine learning model performance and efficiency.',
+      },
+      {
+        title: 'Ensure privacy and ethical practices',
+        description: 'Conducting research with rigorous privacy protections and ethical guidelines for synthetic data usage.',
+      },
+      {
+        title: 'Accelerate scientific discovery',
+        description: 'Providing synthetic data solutions that accelerate research in healthcare, environmental science, and beyond.',
+      },
+    ]}
+  />
+
+  <Steps2
+    title="Key Milestones"
+    subtitle="Our research has produced significant contributions to the field of synthetic spatio-temporal data."
+    isReversed={true}
+    items={[
+      {
+        title: 'Published 12 peer-reviewed papers',
+        description: 'Produced influential research published in top-tier venues including Nature MI, ICML, AAAI, and ICLR.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'Generated 48 benchmark datasets',
+        description: 'Created comprehensive benchmark datasets for evaluating synthetic data generation and evaluation methods.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Presented at major conferences',
+        description: 'Shared our findings at leading international conferences, advancing the state of the art in the field.',
+        icon: 'tabler:presentation',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Get In Touch"
+    tagline="Contact us"
+    columns={2}
+    items={[
+      {
+        title: 'Email contact',
+        description: 'For research inquiries and collaboration opportunities.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'GitHub Issues',
+        description: 'For project-related bug reports and feature requests.',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+  />
+
+  <Features2
+    tagline="Resources"
+    title="Documentation & Outcomes"
+    subtitle="프로젝트 문서, 튜토리얼, 소프트웨어 툴, 연구 성과를 확인하세요."
+    columns={3}
+    items={[
+      {
+        title: 'Docs',
+        description: 'Virtual Brain·Breast Cancer 튜토리얼 및 BrainShapeToolKit, DiffAM, VCM 레퍼런스.',
+        icon: 'tabler:book',
+        callToAction: { text: 'Go to Docs', href: externalLinks.docs, target: '_blank' },
+      },
+      {
+        title: 'Publications & Patents',
+        description: '논문·특허·오픈 데이터셋 및 활용 성과.',
+        icon: 'tabler:file-text',
+        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/publications/') },
+      },
+      {
+        title: 'Research',
+        description: 'SSTDV의 합성 데이터 생성 및 평가 방법론 소개.',
+        icon: 'tabler:flask',
+        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/') },
+      },
+    ]}
+  />
+
+  <CallToAction
     actions={[
       {
         variant: 'primary',
@@ -34,101 +213,12 @@ const metadata = {
         target: '_blank',
         icon: 'tabler:book',
       },
-      { text: t(lang, 'common.learnMore'), href: '#features' },
     ]}
   >
-    <Fragment slot="title">
-      {t(lang, 'hero.title')}
-    </Fragment>
+    <Fragment slot="title">SSTDV Project</Fragment>
     <Fragment slot="subtitle">
-      <span set:html={t(lang, 'hero.subtitle')} />
+      Supported by IITP grant funded by the Korea government (MSIT)<br />
+      No.00223446 — Development of object-oriented synthetic data generation and evaluation methods
     </Fragment>
-  </Hero>
-
-  <!-- 01. 생성 -->
-  <Note title="01 — Generation (생성)" description="도메인 지식을 인지한 고품질 합성 시공간 데이터 생성" />
-
-  <Features
-    id="features"
-    columns={2}
-    items={[
-      {
-        title: 'Knowledge Encoding',
-        description: '시공간 데이터의 구조·역학 등 사전지식을 생성 모델에 명시적으로 인코딩합니다.',
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'Relation Modeling',
-        description: '다변량 시공간 데이터 간 상관관계·인과관계를 모델링해 데이터 추론을 가능하게 합니다.',
-        icon: 'tabler:network',
-      },
-      {
-        title: 'Data Assimilation',
-        description: '데이터 섭동 기술로 생성 중 누적 오차를 수정해 합성 정확도를 향상합니다.',
-        icon: 'tabler:adjustments',
-      },
-      {
-        title: 'Objective Reinforcement',
-        description: '도메인 요구사항에 맞는 보상함수를 적용해 목적 맞춤형 합성 데이터를 생성합니다.',
-        icon: 'tabler:target-arrow',
-      },
-    ]}
-  />
-
-  <!-- 02. 평가 -->
-  <Note title="02 — Evaluation (평가)" description="생성 데이터의 품질을 통계적·목적적으로 정량 검증" />
-
-  <Features2
-    columns={2}
-    items={[
-      {
-        title: 'Statistical Similarity',
-        description: '합성 데이터와 실제 데이터의 분포 유사성 및 변량 간 상관관계를 정량적으로 평가합니다.',
-        icon: 'tabler:chart-bar',
-        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/evaluation/statistical-similarity/') },
-      },
-      {
-        title: 'Objective Relevance',
-        description: '목적 맞춤형 AI 모델 성능을 실데이터·합성데이터·혼합 구성별로 비교해 적합성을 평가합니다.',
-        icon: 'tabler:check',
-        callToAction: { text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/features/evaluation/objective-relevance/') },
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- 03. 실증 -->
-  <Note title="03 — Use Cases (실증)" description="의료영상 두 분야에서 목적 강화 합성 데이터의 유효성 검증" />
-
-  <Content
-    isReversed
-    title="Brain Imaging — Virtual Brain"
-    subtitle="동국대학교 · ADNI"
-    callToAction={{ text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/use-cases/brain-imaging/') }}
-    items={[
-      { title: '종단 뇌영상 변화 시뮬레이션', description: '신경 퇴행성 질환과 관련된 만성·종단 뇌영상 변화를 생성합니다.' },
-      { title: '질병 분류·예측 모델 지원', description: '합성 뇌 MRI 데이터로 분류 및 예측 모델 학습을 가속합니다.' },
-    ]}
-    image={{ src: '~/assets/images/default.png', alt: 'Brain Imaging' }}
-  />
-
-  <Content
-    isAfterContent
-    title="Breast Cancer Surgical Simulation"
-    subtitle="Beamworks · 수술 전/후 MR 1,483 케이스"
-    callToAction={{ text: t(lang, 'common.learnMore'), href: getRelativeLocaleUrl(lang, '/use-cases/breast-cancer/') }}
-    items={[
-      { title: '수술 후 유방 MRI 예측', description: '종양 위치·절제 영역·임플란트 정보를 조건으로 수술 후 영상을 생성합니다.' },
-      { title: '의사-환자 공동 의사결정 지원', description: '메디컬 트윈 기반 수술 계획 시스템에 통합 가능한 생성 결과를 제공합니다.' },
-    ]}
-    image={{ src: '~/assets/images/default.png', alt: 'Breast Cancer' }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
+  </CallToAction>
 </Layout>
